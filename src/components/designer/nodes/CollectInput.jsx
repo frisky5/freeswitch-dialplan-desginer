@@ -1,9 +1,9 @@
-import Generic from "./Generic.jsx";
+import BaseNode from "./Base.jsx";
 import { Stack, Typography } from "@mui/material";
 
-function Condition(props) {
+function CollectInput(props) {
   return (
-    <Generic {...props}>
+    <BaseNode {...props}>
       <Stack
         height={"100%"}
         width={"100%"}
@@ -12,10 +12,10 @@ function Condition(props) {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        <Typography>Condition</Typography>
+        <Typography>Menu</Typography>
       </Stack>
-    </Generic>
+    </BaseNode>
   );
 }
 
-export default Condition;
+export default CollectInput;

@@ -1,40 +1,19 @@
-import Designer from "./components/designer/Designer.jsx";
-import { useMemo, useState } from "react";
-import Drawer from "./components/common/Drawer.jsx";
-import DesignerContext from "./contexts/designer.js";
+import ContextDesigner from "./components/designer/ContextDesigner.jsx";
+import { Stack } from "@mui/material";
+import { useContext } from "react";
+import { designerContext } from "./components/designer/contexts/Contexts.js";
+import ExtensionDesigner from "./components/designer/ExtensionDesigner.jsx";
+import NodesDrawer from "./components/common/nodesDrawer/NodesDrawer.jsx";
 
-import Genesis from "./components/ndoes/Genesis.jsx";
-import CollectInput from "./components/ndoes/CollectInput.jsx";
-import { generateCondition, genGenesis } from "./helpers/nodeGenerator.js";
-import { Box } from "@mui/material";
-
-function Entry(props) {
-  const [nodes, setNodes] = useState([genGenesis(), generateCondition()]);
-  const [edges, setEdges] = useState([]);
-  const nodeTypes = useMemo(
-    () => ({ genesis: Genesis, collectInput: CollectInput }),
-    [],
-  );
-  const [viewport, setViewport] = useState({});
-
+export default function Entry() {
+  const context = useContext(designerContext);
   return (
-    <DesignerContext.Provider
-      value={{
-        nodes,
-        setNodes,
-        edges,
-        setEdges,
-        nodeTypes,
-        viewport,
-        setViewport,
-      }}
-    >
-      <Box id={"entry"} width={"100%"} height={"100%"}>
-        {/*<Drawer />*/}
-        <Designer />
-      </Box>
-    </DesignerContext.Provider>
+    <Stack width={"100%"} height={"100%"} direction={"row"}>
+      {context.openExtensionDesigner ? (
+        <ExtensionDesigner />
+      ) : (
+        <ContextDesigner />
+      )}
+    </Stack>
   );
 }
-
-export default Entry;

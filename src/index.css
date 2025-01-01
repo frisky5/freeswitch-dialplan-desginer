@@ -15,3 +15,13 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
+.react-flow__node {
+    /*z-index: 0 !important;*/
+    cursor: default !important;
+}
+
+.drag-handle__mover {
+    z-index: 0 !important;
+    cursor: grab;
+}
