@@ -17,6 +17,7 @@ export default function DesignerContext({ children }) {
   const [openNodesDrawer, setOpenNodesDrawer] = useState(false);
   const [extensionDesignerTarget, setExtensionDesignerTarget] = useState(false);
   const [openExtensionDesigner, setOpenExtensionDesigner] = useState(false);
+  const [topAppBarTitle, setTopAppBarTitle] = useState("Context Designer");
 
   useEffect(() => {
     const [genesisNode, genesisNodeData] = generateGenesis();
@@ -59,6 +60,8 @@ export default function DesignerContext({ children }) {
         setExtensionDesignerTarget,
         openExtensionDesigner,
         setOpenExtensionDesigner,
+        topAppBarTitle,
+        setTopAppBarTitle,
       }}
     >
       {children}

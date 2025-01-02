@@ -7,7 +7,7 @@ import NodesDrawerItem from "./NodesDrawerItem.jsx";
 import { NODE_TYPES } from "../../../helpers/nodeGenerator.js";
 
 const drawerWidth = 180;
-const closedDrawerWidth = 70;
+const closedDrawerWidth = 80;
 
 function NodesDrawer(props) {
   const context = useContext(designerContext);
@@ -30,23 +30,7 @@ function NodesDrawer(props) {
     >
       <Stack width={"100%"} height={"100%"}>
         <Stack
-          width={"100%"}
-          direction={"row"}
-          justifyContent={context.openNodesDrawer ? "flex-end" : "center"}
-          alignItems={"center"}
-          pt={1}
-        >
-          <IconButton
-            color={"primary"}
-            onClick={() => {
-              context.setOpenNodesDrawer(!context.openNodesDrawer);
-            }}
-          >
-            {context.openNodesDrawer ? <ArrowBackIcon /> : <MenuIcon />}
-          </IconButton>
-        </Stack>
-        <Stack
-          pt={4}
+          pt={10}
           height={"100%"}
           width={"100%"}
           overflow={"auto"}

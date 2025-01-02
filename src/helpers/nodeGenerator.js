@@ -37,7 +37,7 @@ export function generateGenesis() {
   node.draggable = false;
   node.position = { x: 0, y: 0 };
 
-  let nodeData = { name: "" };
+  let nodeData = { name: "", error: true, flowId: v7() };
   return [node, nodeData];
 }
 
@@ -48,7 +48,6 @@ export function generateExtensionGenesis() {
   node.data.inputHandles = [];
   node.draggable = false;
   node.position = { x: 0, y: 0 };
-
   let nodeData = {};
   return [node, nodeData];
 }
@@ -62,6 +61,7 @@ export function generateExtension() {
   let [tempGenesis, tempGenesisData] = generateExtensionGenesis();
   let nodeData = {
     name: "",
+    error: true,
     nodes: [],
     edges: [],
     viewport: {},
@@ -76,7 +76,7 @@ export function generateCondition() {
   let node = generateTemplate();
   node.type = NODE_TYPES.CONDITION;
   node.data.inputHandles.push({ id: v7() });
-  let nodeData = { conditions: [] };
+  let nodeData = { name: "", error: true, conditions: [] };
   return [node, nodeData];
 }
 

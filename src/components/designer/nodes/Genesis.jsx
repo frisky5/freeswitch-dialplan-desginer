@@ -1,5 +1,5 @@
 import BaseNode from "./Base.jsx";
-import { Stack, TextField, Typography } from "@mui/material";
+import { Stack, TextField } from "@mui/material";
 import SourceHandle from "../handles/SourceHandle.jsx";
 import FlagCircleIcon from "@mui/icons-material/FlagCircle";
 import { produce } from "immer";
@@ -37,6 +37,7 @@ export default function Genesis(props) {
           size={"small"}
           variant={"standard"}
           label={"Context Name"}
+          error={context.nodesData[props.id]?.name === ""}
           value={context.nodesData[props.id]?.name}
           onChange={(e) => {
             context.setNodesData(

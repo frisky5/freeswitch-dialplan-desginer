@@ -96,34 +96,34 @@ export default function ExtensionDesigner() {
           />
         </ReactFlowProvider>
       </Stack>
-      <Stack
-        width={"100%"}
-        direction={"row"}
-        alignItems={"flex-end"}
-        justifyContent={"flex-end"}
-        gap={2}
-      >
-        <Button
-          size={"small"}
-          variant={"contained"}
-          color={"warning"}
-          onClick={() => {
-            context.setOpenExtensionDesigner(false);
-          }}
-        >
-          cancel
-        </Button>
-        <Button
-          size={"small"}
-          variant={"contained"}
-          color={"success"}
-          onClick={() => {
-            context.setOpenExtensionDesigner(false);
-          }}
-        >
-          save
-        </Button>
-      </Stack>
+      {/*<Stack*/}
+      {/*  width={"100%"}*/}
+      {/*  direction={"row"}*/}
+      {/*  alignItems={"flex-end"}*/}
+      {/*  justifyContent={"flex-end"}*/}
+      {/*  gap={2}*/}
+      {/*>*/}
+      {/*  <Button*/}
+      {/*    size={"small"}*/}
+      {/*    variant={"contained"}*/}
+      {/*    color={"warning"}*/}
+      {/*    onClick={() => {*/}
+      {/*      context.setOpenExtensionDesigner(false);*/}
+      {/*    }}*/}
+      {/*  >*/}
+      {/*    cancel*/}
+      {/*  </Button>*/}
+      {/*  <Button*/}
+      {/*    size={"small"}*/}
+      {/*    variant={"contained"}*/}
+      {/*    color={"success"}*/}
+      {/*    onClick={() => {*/}
+      {/*      context.setOpenExtensionDesigner(false);*/}
+      {/*    }}*/}
+      {/*  >*/}
+      {/*    save*/}
+      {/*  </Button>*/}
+      {/*</Stack>*/}
     </Stack>
   );
 }

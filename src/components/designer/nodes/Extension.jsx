@@ -35,6 +35,9 @@ export default function Extension(props) {
             disabled={context.nodesData[props.id]?.name === ""}
             color={"primary"}
             onClick={() => {
+              context.setTopAppBarTitle(
+                `Logic Group : ${context.nodesData[props.id]?.name}`,
+              );
               context.setExtensionDesignerTarget(props);
               context.setOpenExtensionDesigner(true);
             }}
